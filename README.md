@@ -9,31 +9,32 @@ Lustrous provides a complete and self–contained, isolated, portable and reprod
 This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), [Ubuntu](http://www.ubuntu.com/) or another decent Debian–based distribution.
 
 1. Install [Git](http://git-scm.com/):
-
-    $ sudo apt-get install git
-
+```
+$ sudo apt-get install git
+```
 2. Install the [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System) server:
-
-    $ sudo apt-get install nfs-kernel-server
-
+```
+$ sudo apt-get install nfs-kernel-server
+```
 3. Install the latest [VirtualBox](https://www.virtualbox.org/)
 4. Install the latest [Vagrant](https://www.vagrantup.com/)
 5. Clone the [Lustrous GitHub repository](https://github.com/michalroszka/lustrous) and start up the environment:
-
-    $ git clone https://github.com/michalroszka/lustrous.git
-    $ cd lustrous
-    $ vagrant up
-
+```
+$ git clone https://github.com/michalroszka/lustrous.git
+$ cd lustrous
+$ vagrant up
+```
 6. Start an interactive shell:
-
-    $ vagrant ssh
-
+```
+$ vagrant ssh
+```
 7. The `/vagrant` folder corresponds to the Lusterous folder on your host machine, and its contents is shared. This allows you to use your normal editor environment on your host machine to edit the code that runs on your virtual machine.
 
 8. Test your code:
-
-    $ varnishd -C -f /vagrant/example/example.vcl
-    $ varnishtest /vagrant/tests/example.vtc
+```
+$ varnishd -C -f /vagrant/example/example.vcl
+$ varnishtest /vagrant/tests/example.vtc
+```
 
 ## License ##
 
