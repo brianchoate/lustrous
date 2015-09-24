@@ -1,0 +1,55 @@
+
+# An Example Lustrous Test Case.
+
+# Set a human–friendly identifier for the test case.
+varnishtest "An Example Lustrous Test Case"
+
+# Mock a backend server for the test case and start it.
+server s1 {
+
+	# Receive an HTTP request.
+	rxreq
+
+	# Set HTTP response body.
+	txresp -body "Welcome to Lustrous!"
+
+} -start
+
+# Mock a Varnish server for the test case and start it.
+varnish v1 -vcl {
+
+	# Specify the backend server.
+	backend default {
+		.host = "${s1_addr}";
+		.port = "${s1_port}";
+	}
+
+	# Include the VCL to test.
+	# TODO: Find a way to use a relative path here.
+	include "/vagrant/example/example.vcl";
+
+} -start
+
+# Mock a client for the test case and run it.
+client c1 {
+
+	# Transmit an HTTP request.
+	txreq
+
+	# Receive an HTTP response.
+	rxresp
+
+	# Assertions.
+	# If any assertion is false, the test will fail.
+
+	# Assertion: HTTP status code.
+	expect resp.status == 200
+
+	# Assertion: HTTP response header.
+	expect resp.http.X-Served-By == "Lustrous"
+
+	# Assertion: HTTP response body.
+	expect resp.body == "Welcome to Lustrous!"
+
+} -run
+
