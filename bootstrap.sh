@@ -5,6 +5,9 @@
 # Update lists of packages.
 apt-get update
 
+# Upgrade existing packages.
+apt-get upgrade -y
+
 # Install Varnish and its documentation.
 apt-get install -y varnish varnish-doc
 
