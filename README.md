@@ -10,14 +10,14 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
 
 1. Install [Git](http://git-scm.com/):
 
-        ```
-        $ sudo apt-get install git
-        ```
+    ```
+    $ sudo apt-get install git
+    ```
 2. Install the [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System) server:
 
-        ```
-        $ sudo apt-get install nfs-kernel-server
-        ```
+    ```
+    $ sudo apt-get install nfs-kernel-server
+    ```
 3. Install the latest [VirtualBox](https://www.virtualbox.org/)
 4. Install the latest [Vagrant](https://www.vagrantup.com/)
 5. Clone the [Lustrous GitHub repository](https://github.com/michalroszka/lustrous) and start up the environment:
