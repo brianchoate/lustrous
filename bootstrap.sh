@@ -27,8 +27,8 @@ systemctl disable varnishncsa.service
 
 # Create a symbolic link to Varnish documentation so that
 # it is easily accessible from the host system's Web browser.
-ln --verbose --symbolic /usr/share/doc/varnish-doc/html /var/www/html/varnish-doc
+ln --force --verbose --symbolic /usr/share/doc/varnish-doc/html /var/www/html/varnish-doc
 
 # Put the Lustrous' home page in nginx's document root.
-cp --verbose /vagrant/index.html /var/www/html/
+cp --force --verbose /vagrant/index.html /var/www/html/
 
