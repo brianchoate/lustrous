@@ -14,8 +14,16 @@ Vagrant.configure(2) do |config|
 
 	# Change VM's name from "default" to "lustrous".
 	config.vm.define :lustrous
+
 	config.vm.provider "virtualbox" do |v|
+
+		# Change VM's name from "default" to "lustrous".
 		v.name = "lustrous"
+
+		# Use just one CPU core and 512 MB of RAM.
+		v.cpus = 1
+		v.memory = 512
+
 	end
 
 	# Mount the VCL directory in "/home/vagrant/vcl" so that
