@@ -11,6 +11,12 @@ apt-get upgrade -y
 # Install Varnish and its documentation.
 apt-get install -y varnish varnish-doc
 
+# Install a light version of nginx with only a minimal set of features.
+apt-get install -y nginx-light
+
+# Remove all unused packages.
+apt-get autoremove -y
+
 # Stop and disable Varnish logging daemon.
 systemctl stop varnishlog.service
 systemctl disable varnishlog.service
