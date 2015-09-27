@@ -49,7 +49,5 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
 
 ## License ##
 
-Lustrous is provided under
-the [MIT License](https://opensource.org/licenses/MIT). See accompanying
-`LICENSE.md` for details.
+Lustrous is provided under the [MIT License](https://opensource.org/licenses/MIT). See accompanying `LICENSE.md` for details.
 
