@@ -11,10 +11,6 @@ apt-get upgrade -y
 # Install Varnish and its documentation.
 apt-get install -y varnish varnish-doc
 
-# Stop and disable the Varnish daemon.
-systemctl stop varnish.service
-systemctl disable varnish.service
-
 # Stop and disable Varnish logging daemon.
 systemctl stop varnishlog.service
 systemctl disable varnishlog.service
