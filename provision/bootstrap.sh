@@ -30,5 +30,5 @@ systemctl disable varnishncsa.service
 ln --force --verbose --symbolic /usr/share/doc/varnish-doc/html /var/www/html/varnish-doc
 
 # Put the Lustrous' home page in nginx's document root.
-cp --force --verbose /vagrant/provision/index.html /var/www/html/
+cp --force --verbose /provision/index.html /var/www/html/
 
