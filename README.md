@@ -51,5 +51,5 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
 
 Lustrous is provided under
 the [MIT License](https://opensource.org/licenses/MIT). See accompanying
-LICENSE.md for details.
+`LICENSE.md` for details.
 
