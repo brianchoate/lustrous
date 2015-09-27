@@ -4,6 +4,12 @@
 
 Lustrous provides a complete and self–contained, isolated, portable and reproducible environment for working with [Varnish](https://www.varnish-cache.org/) configuration. Lustrous stands on the shoulders of giants and is built on top of industry–standard technology. It offers the quickest possible start into the Varnish Configuration Language. With a healthy dose of automation, it makes test–driven Varnish configuration easier than ever.
 
+## Requirements ##
+
+In order to run Lustrous you need a reasonably powerful 64-bit x86 hardware with at least 1GB of RAM and 2GB of free disk space available and an operating system capable of running [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/). On Linux, you also need a [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System) server.
+
+**Lustrous has not been tested on a Mac or a Windows PC.**
+
 ## Quick Start ##
 
 This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), [Ubuntu](http://www.ubuntu.com/) or another decent Debian–based distribution.
@@ -32,12 +38,12 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
     ```
     $ vagrant ssh
     ```
-7. The `/vagrant` folder corresponds to the Lusterous folder on your host machine, and its contents is shared. This allows you to use your normal editor environment on your host machine to edit the code that runs on your virtual machine.
+7. The `/vagrant` folder corresponds to the Lustrous folder on your host machine, and its contents is shared. This allows you to use your normal editor environment on your host machine to edit the code that runs on your virtual machine.
 
 8. Test your code:
 
     ```
-    $ varnishd -C -f /vagrant/example/example.vcl
+    $ sudo /usr/share/varnish/reload-vcl -c /vagrant/example/example.vcl
     $ varnishtest /vagrant/tests/example.vtc
     ```
 
