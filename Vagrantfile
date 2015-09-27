@@ -18,5 +18,19 @@ Vagrant.configure(2) do |config|
 		v.name = "lustrous"
 	end
 
+	# Mount the VCL directory in "/home/vagrant/vcl" so that
+	# it is easier to access.
+	config.vm.synced_folder "vcl/", "/home/vagrant/vcl",
+		owner: "vagrant", group: "vagrant"
+
+	# Mount the provisioner's directory to in "/provision"
+	# so that it stands out of the way.
+	config.vm.synced_folder "provision/", "/provision",
+		owner: "root", group: "root"
+
+	# Disable the default share so that it stands out of the way.
+	config.vm.synced_folder "./", "/vagrant",
+		disabled: true
+
 end
 

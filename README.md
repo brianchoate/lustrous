@@ -38,13 +38,13 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
     ```
     $ vagrant ssh
     ```
-7. The `/vagrant` folder corresponds to the Lustrous folder on your host machine, and its contents is shared. This allows you to use your normal editor environment on your host machine to edit the code that runs on your virtual machine.
+7. The `/home/vagrant/vcl/` folder corresponds to the Lustrous' `vcl/` folder on your host machine, and its contents is shared. This allows you to use your normal editor environment on your host machine to edit the code that runs on your virtual machine.
 
 8. Test your code:
 
     ```
-    $ sudo /usr/share/varnish/reload-vcl -c /vagrant/example/example.vcl
-    $ varnishtest /vagrant/tests/example.vtc
+    $ sudo /usr/share/varnish/reload-vcl -c /home/vagrant/vcl/example/example.vcl
+    $ varnishtest /home/vagrant/vcl/example/tests/example.vtc
     ```
 
 ## License ##
