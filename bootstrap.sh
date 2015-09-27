@@ -25,3 +25,7 @@ systemctl disable varnishlog.service
 systemctl stop varnishncsa.service
 systemctl disable varnishncsa.service
 
+# Create a symbolic link to Varnish documentation so that
+# it is easily accessible from the host system's Web browser.
+ln --verbose --symbolic /usr/share/doc/varnish-doc/html /var/www/html/varnish-doc
+
