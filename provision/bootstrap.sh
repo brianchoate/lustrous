@@ -42,3 +42,10 @@ git clone git://anonscm.debian.org/pkg-varnish/pkg-varnish.git /usr/src/pkg-varn
 rm --force --verbose /var/www/html/varnishtest-src
 ln --force --verbose --symbolic /usr/src/pkg-varnish/bin/varnishtest /var/www/html/varnishtest-src
 
+# Remove all active nginx configuration, replace it with
+# Lustrous-specific settings and restart nginx.
+rm --force --verbose /etc/nginx/sites-enabled/*
+cp --force --verbose /provision/lustrous.nginx.conf /etc/nginx/sites-available/
+ln --force --verbose --symbolic /etc/nginx/sites-available/lustrous.nginx.conf /etc/nginx/sites-enabled/lustrous
+service nginx restart
+
