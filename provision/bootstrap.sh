@@ -33,3 +33,12 @@ ln --force --verbose --symbolic /usr/share/doc/varnish-doc/html /var/www/html/va
 # Put the Lustrous' home page in nginx's document root.
 cp --force --verbose /provision/index.html /var/www/html/
 
+# Download the source code of Varnish Debian package and create
+# a symbolic link to the source code of varnishtest
+# and its regression tests is easily accessible from the host
+# system's Web browser.
+rm --force --verbose --recursive /usr/src/pkg-varnish
+git clone git://anonscm.debian.org/pkg-varnish/pkg-varnish.git /usr/src/pkg-varnish
+rm --force --verbose /var/www/html/varnishtest-src
+ln --force --verbose --symbolic /usr/src/pkg-varnish/bin/varnishtest /var/www/html/varnishtest-src
+
