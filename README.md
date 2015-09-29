@@ -44,8 +44,8 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
 
     ```
     $ sudo /usr/share/varnish/reload-vcl -c /home/vagrant/vcl/example/example.vcl
-    $ varnishtest /home/vagrant/vcl/example/tests/example.vtc
-```
+    $ varnishtest -D vcl_root=/home/vagrant/vcl/example /home/vagrant/vcl/example/tests/example.vtc
+    ```
 
 9. Open [http://localhost:8888/](http://localhost:8888/) in your Web browser for more information and documentation.
 

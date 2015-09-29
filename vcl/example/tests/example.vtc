@@ -25,8 +25,7 @@ varnish v1 -vcl {
 	}
 
 	# Include the VCL to test.
-	# TODO: Find a way to use a relative path here.
-	include "/home/vagrant/vcl/example/example.vcl";
+	include "${vcl_root}/example.vcl";
 
 } -start
 
