@@ -42,10 +42,8 @@ This section assumes you are using [Debian GNU/Linux](https://www.debian.org/), 
 
 8. Test your code:
 
-    ```
-    $ sudo /usr/share/varnish/reload-vcl -c /home/vagrant/vcl/example/example.vcl
-    $ varnishtest -D vcl_root=/home/vagrant/vcl/example /home/vagrant/vcl/example/tests/example.vtc
-    ```
+    * `$ varnishtest -D vcl_root=/home/vagrant/vcl/example /home/vagrant/vcl/example/tests/example.vtc` runs one particular test
+    * `$ make --directory=/home/vagrant/vcl/ PREFIX=example` runs all tests from `/home/vagrant/vcl/example/tests/`
 
 9. Open [http://localhost:8888/](http://localhost:8888/) in your Web browser for more information and documentation.
 
